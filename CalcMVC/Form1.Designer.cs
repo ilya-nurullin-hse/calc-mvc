@@ -43,7 +43,7 @@
             this.ActionsWithTime = new System.Windows.Forms.ComboBox();
             this.Equal = new System.Windows.Forms.Button();
             this.Answer = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ReverseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // HoursTextBox1
@@ -52,6 +52,7 @@
             this.HoursTextBox1.Name = "HoursTextBox1";
             this.HoursTextBox1.Size = new System.Drawing.Size(100, 20);
             this.HoursTextBox1.TabIndex = 0;
+            this.HoursTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HoursTextBox1_KeyPress);
             // 
             // MinutesTextBox1
             // 
@@ -59,6 +60,7 @@
             this.MinutesTextBox1.Name = "MinutesTextBox1";
             this.MinutesTextBox1.Size = new System.Drawing.Size(100, 20);
             this.MinutesTextBox1.TabIndex = 1;
+            this.MinutesTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MinutesTextBox1_KeyPress);
             // 
             // SecondsTextBox1
             // 
@@ -66,6 +68,7 @@
             this.SecondsTextBox1.Name = "SecondsTextBox1";
             this.SecondsTextBox1.Size = new System.Drawing.Size(100, 20);
             this.SecondsTextBox1.TabIndex = 2;
+            this.SecondsTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SecondsTextBox1_KeyPress);
             // 
             // HoursLabel1
             // 
@@ -127,6 +130,7 @@
             this.SecondsTextBox2.Name = "SecondsTextBox2";
             this.SecondsTextBox2.Size = new System.Drawing.Size(100, 20);
             this.SecondsTextBox2.TabIndex = 8;
+            this.SecondsTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SecondsTextBox2_KeyPress);
             // 
             // MinutesTextBox2
             // 
@@ -134,6 +138,7 @@
             this.MinutesTextBox2.Name = "MinutesTextBox2";
             this.MinutesTextBox2.Size = new System.Drawing.Size(100, 20);
             this.MinutesTextBox2.TabIndex = 7;
+            this.MinutesTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MinutesTextBox2_KeyPress);
             // 
             // HoursTextBox2
             // 
@@ -141,6 +146,7 @@
             this.HoursTextBox2.Name = "HoursTextBox2";
             this.HoursTextBox2.Size = new System.Drawing.Size(100, 20);
             this.HoursTextBox2.TabIndex = 6;
+            this.HoursTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HoursTextBox2_KeyPress);
             // 
             // ActionsWithTime
             // 
@@ -170,29 +176,31 @@
             // 
             // Answer
             // 
+            this.Answer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Answer.AutoSize = true;
-            this.Answer.Location = new System.Drawing.Point(162, 250);
+            this.Answer.Location = new System.Drawing.Point(160, 250);
             this.Answer.Name = "Answer";
-            this.Answer.Size = new System.Drawing.Size(126, 13);
+            this.Answer.Size = new System.Drawing.Size(133, 13);
             this.Answer.TabIndex = 14;
-            this.Answer.Text = "FFFFFFFFFFFFFFasFFFF";
-            this.Answer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Answer.Text = "Тут будет выведен ответ";
+            this.Answer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // ReverseButton
             // 
-            this.button1.Location = new System.Drawing.Point(181, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Реверс";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ReverseButton.Location = new System.Drawing.Point(181, 26);
+            this.ReverseButton.Name = "ReverseButton";
+            this.ReverseButton.Size = new System.Drawing.Size(75, 23);
+            this.ReverseButton.TabIndex = 15;
+            this.ReverseButton.Text = "Реверс";
+            this.ReverseButton.UseVisualStyleBackColor = true;
+            this.ReverseButton.Click += new System.EventHandler(this.ReverseButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 272);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ReverseButton);
             this.Controls.Add(this.Answer);
             this.Controls.Add(this.Equal);
             this.Controls.Add(this.ActionsWithTime);
@@ -209,7 +217,7 @@
             this.Controls.Add(this.MinutesTextBox1);
             this.Controls.Add(this.HoursTextBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TimeCalculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,7 +240,7 @@
         private System.Windows.Forms.ComboBox ActionsWithTime;
         private System.Windows.Forms.Button Equal;
         private System.Windows.Forms.Label Answer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ReverseButton;
     }
 }
 
