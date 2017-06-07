@@ -28,12 +28,211 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.HoursTextBox1 = new System.Windows.Forms.TextBox();
+            this.MinutesTextBox1 = new System.Windows.Forms.TextBox();
+            this.SecondsTextBox1 = new System.Windows.Forms.TextBox();
+            this.HoursLabel1 = new System.Windows.Forms.Label();
+            this.MinutesLabel1 = new System.Windows.Forms.Label();
+            this.SecondsLabel1 = new System.Windows.Forms.Label();
+            this.SecondLabel2 = new System.Windows.Forms.Label();
+            this.MinutesLabel2 = new System.Windows.Forms.Label();
+            this.HoursLabel2 = new System.Windows.Forms.Label();
+            this.SecondsTextBox2 = new System.Windows.Forms.TextBox();
+            this.MinutesTextBox2 = new System.Windows.Forms.TextBox();
+            this.HoursTextBox2 = new System.Windows.Forms.TextBox();
+            this.ActionsWithTime = new System.Windows.Forms.ComboBox();
+            this.Equal = new System.Windows.Forms.Button();
+            this.Answer = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // HoursTextBox1
+            // 
+            this.HoursTextBox1.Location = new System.Drawing.Point(78, 62);
+            this.HoursTextBox1.Name = "HoursTextBox1";
+            this.HoursTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.HoursTextBox1.TabIndex = 0;
+            // 
+            // MinutesTextBox1
+            // 
+            this.MinutesTextBox1.Location = new System.Drawing.Point(78, 105);
+            this.MinutesTextBox1.Name = "MinutesTextBox1";
+            this.MinutesTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.MinutesTextBox1.TabIndex = 1;
+            // 
+            // SecondsTextBox1
+            // 
+            this.SecondsTextBox1.Location = new System.Drawing.Point(78, 147);
+            this.SecondsTextBox1.Name = "SecondsTextBox1";
+            this.SecondsTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.SecondsTextBox1.TabIndex = 2;
+            // 
+            // HoursLabel1
+            // 
+            this.HoursLabel1.AutoSize = true;
+            this.HoursLabel1.Location = new System.Drawing.Point(26, 65);
+            this.HoursLabel1.Name = "HoursLabel1";
+            this.HoursLabel1.Size = new System.Drawing.Size(35, 13);
+            this.HoursLabel1.TabIndex = 3;
+            this.HoursLabel1.Text = "Часы";
+            // 
+            // MinutesLabel1
+            // 
+            this.MinutesLabel1.AutoSize = true;
+            this.MinutesLabel1.Location = new System.Drawing.Point(15, 108);
+            this.MinutesLabel1.Name = "MinutesLabel1";
+            this.MinutesLabel1.Size = new System.Drawing.Size(46, 13);
+            this.MinutesLabel1.TabIndex = 4;
+            this.MinutesLabel1.Text = "Минуты";
+            // 
+            // SecondsLabel1
+            // 
+            this.SecondsLabel1.AutoSize = true;
+            this.SecondsLabel1.Location = new System.Drawing.Point(10, 150);
+            this.SecondsLabel1.Name = "SecondsLabel1";
+            this.SecondsLabel1.Size = new System.Drawing.Size(51, 13);
+            this.SecondsLabel1.TabIndex = 5;
+            this.SecondsLabel1.Text = "Секунды";
+            // 
+            // SecondLabel2
+            // 
+            this.SecondLabel2.AutoSize = true;
+            this.SecondLabel2.Location = new System.Drawing.Point(253, 146);
+            this.SecondLabel2.Name = "SecondLabel2";
+            this.SecondLabel2.Size = new System.Drawing.Size(51, 13);
+            this.SecondLabel2.TabIndex = 11;
+            this.SecondLabel2.Text = "Секунды";
+            // 
+            // MinutesLabel2
+            // 
+            this.MinutesLabel2.AutoSize = true;
+            this.MinutesLabel2.Location = new System.Drawing.Point(258, 104);
+            this.MinutesLabel2.Name = "MinutesLabel2";
+            this.MinutesLabel2.Size = new System.Drawing.Size(46, 13);
+            this.MinutesLabel2.TabIndex = 10;
+            this.MinutesLabel2.Text = "Минуты";
+            // 
+            // HoursLabel2
+            // 
+            this.HoursLabel2.AutoSize = true;
+            this.HoursLabel2.Location = new System.Drawing.Point(269, 61);
+            this.HoursLabel2.Name = "HoursLabel2";
+            this.HoursLabel2.Size = new System.Drawing.Size(35, 13);
+            this.HoursLabel2.TabIndex = 9;
+            this.HoursLabel2.Text = "Часы";
+            // 
+            // SecondsTextBox2
+            // 
+            this.SecondsTextBox2.Location = new System.Drawing.Point(321, 143);
+            this.SecondsTextBox2.Name = "SecondsTextBox2";
+            this.SecondsTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.SecondsTextBox2.TabIndex = 8;
+            // 
+            // MinutesTextBox2
+            // 
+            this.MinutesTextBox2.Location = new System.Drawing.Point(321, 101);
+            this.MinutesTextBox2.Name = "MinutesTextBox2";
+            this.MinutesTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.MinutesTextBox2.TabIndex = 7;
+            // 
+            // HoursTextBox2
+            // 
+            this.HoursTextBox2.Location = new System.Drawing.Point(321, 58);
+            this.HoursTextBox2.Name = "HoursTextBox2";
+            this.HoursTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.HoursTextBox2.TabIndex = 6;
+            // 
+            // ActionsWithTime
+            // 
+            this.ActionsWithTime.FormattingEnabled = true;
+            this.ActionsWithTime.Items.AddRange(new object[] {
+            "+",
+            "-",
+            "<=>",
+            "H",
+            "M",
+            "S"});
+            this.ActionsWithTime.Location = new System.Drawing.Point(198, 96);
+            this.ActionsWithTime.Name = "ActionsWithTime";
+            this.ActionsWithTime.Size = new System.Drawing.Size(41, 21);
+            this.ActionsWithTime.TabIndex = 12;
+            this.ActionsWithTime.SelectedIndexChanged += new System.EventHandler(this.ActionsWithTime_SelectedIndexChanged);
+            // 
+            // Equal
+            // 
+            this.Equal.Location = new System.Drawing.Point(191, 202);
+            this.Equal.Name = "Equal";
+            this.Equal.Size = new System.Drawing.Size(55, 23);
+            this.Equal.TabIndex = 13;
+            this.Equal.Text = "=";
+            this.Equal.UseVisualStyleBackColor = true;
+            this.Equal.Click += new System.EventHandler(this.Equal_Click);
+            // 
+            // Answer
+            // 
+            this.Answer.AutoSize = true;
+            this.Answer.Location = new System.Drawing.Point(162, 250);
+            this.Answer.Name = "Answer";
+            this.Answer.Size = new System.Drawing.Size(126, 13);
+            this.Answer.TabIndex = 14;
+            this.Answer.Text = "FFFFFFFFFFFFFFasFFFF";
+            this.Answer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(181, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Реверс";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(443, 272);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Answer);
+            this.Controls.Add(this.Equal);
+            this.Controls.Add(this.ActionsWithTime);
+            this.Controls.Add(this.SecondLabel2);
+            this.Controls.Add(this.MinutesLabel2);
+            this.Controls.Add(this.HoursLabel2);
+            this.Controls.Add(this.SecondsTextBox2);
+            this.Controls.Add(this.MinutesTextBox2);
+            this.Controls.Add(this.HoursTextBox2);
+            this.Controls.Add(this.SecondsLabel1);
+            this.Controls.Add(this.MinutesLabel1);
+            this.Controls.Add(this.HoursLabel1);
+            this.Controls.Add(this.SecondsTextBox1);
+            this.Controls.Add(this.MinutesTextBox1);
+            this.Controls.Add(this.HoursTextBox1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox HoursTextBox1;
+        private System.Windows.Forms.TextBox MinutesTextBox1;
+        private System.Windows.Forms.TextBox SecondsTextBox1;
+        private System.Windows.Forms.Label HoursLabel1;
+        private System.Windows.Forms.Label MinutesLabel1;
+        private System.Windows.Forms.Label SecondsLabel1;
+        private System.Windows.Forms.Label SecondLabel2;
+        private System.Windows.Forms.Label MinutesLabel2;
+        private System.Windows.Forms.Label HoursLabel2;
+        private System.Windows.Forms.TextBox SecondsTextBox2;
+        private System.Windows.Forms.TextBox MinutesTextBox2;
+        private System.Windows.Forms.TextBox HoursTextBox2;
+        private System.Windows.Forms.ComboBox ActionsWithTime;
+        private System.Windows.Forms.Button Equal;
+        private System.Windows.Forms.Label Answer;
+        private System.Windows.Forms.Button button1;
     }
 }
 

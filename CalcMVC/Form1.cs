@@ -17,5 +17,33 @@ namespace CalcMVC
         {
             InitializeComponent();
         }
+
+        private void Equal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ActionsWithTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            switch (ActionsWithTime.Text)
+            {
+                case "+":
+                    {
+                       
+                        break;
+                    }
+            }
+        }
     }
+   
 }
+/*
+ * спросить про почту
+ нахождение интервала (1-2) (?если отр) - нельзя
+ нахождения суммы (+)
+ нахождение разности(-)
+ свайп (1=2, 2,1)
+ преобразования в тип (час/минута/секунда) (тримим ли ед. времени)
+
+     */
