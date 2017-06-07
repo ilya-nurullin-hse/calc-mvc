@@ -1,0 +1,8 @@
+c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\bin\Debug\CalcMVC.exe.config
+c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\bin\Debug\CalcMVC.exe
+c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\bin\Debug\CalcMVC.pdb
+c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\obj\Debug\CalcMVC.csprojResolveAssemblyReference.cache
+c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\obj\Debug\CalcMVC.Properties.Resources.resources
+c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\obj\Debug\CalcMVC.csproj.GenerateResource.Cache
+c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\obj\Debug\CalcMVC.exe
+c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\obj\Debug\CalcMVC.pdb
