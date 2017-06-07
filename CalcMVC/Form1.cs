@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace CalcMVC
 {
+    //проверка гит
     public partial class Form1 : Form
     {
         public Form1()

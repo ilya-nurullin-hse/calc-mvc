@@ -6,3 +6,6 @@ c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\obj\Deb
 c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\obj\Debug\CalcMVC.csproj.GenerateResource.Cache
 c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\obj\Debug\CalcMVC.exe
 c:\users\localuser\documents\visual studio 2015\Projects\CalcMVC\CalcMVC\obj\Debug\CalcMVC.pdb
+E:\calc-mvc\CalcMVC\bin\Debug\CalcMVC.exe.config
+E:\calc-mvc\CalcMVC\obj\Debug\CalcMVC.exe
+E:\calc-mvc\CalcMVC\obj\Debug\CalcMVC.pdb
