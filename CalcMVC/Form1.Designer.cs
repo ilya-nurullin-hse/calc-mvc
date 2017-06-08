@@ -44,6 +44,9 @@
             this.Equal = new System.Windows.Forms.Button();
             this.Answer = new System.Windows.Forms.Label();
             this.ReverseButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.выставитьТекущееВремяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // HoursTextBox1
@@ -195,6 +198,23 @@
             this.ReverseButton.UseVisualStyleBackColor = true;
             this.ReverseButton.Click += new System.EventHandler(this.ReverseButton_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.выставитьТекущееВремяToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(443, 24);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // выставитьТекущееВремяToolStripMenuItem
+            // 
+            this.выставитьТекущееВремяToolStripMenuItem.Name = "выставитьТекущееВремяToolStripMenuItem";
+            this.выставитьТекущееВремяToolStripMenuItem.Size = new System.Drawing.Size(162, 20);
+            this.выставитьТекущееВремяToolStripMenuItem.Text = "Выставить текущее время";
+            this.выставитьТекущееВремяToolStripMenuItem.Click += new System.EventHandler(this.выставитьТекущееВремяToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,8 +236,12 @@
             this.Controls.Add(this.SecondsTextBox1);
             this.Controls.Add(this.MinutesTextBox1);
             this.Controls.Add(this.HoursTextBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "TimeCalculator";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +265,8 @@
         private System.Windows.Forms.Button Equal;
         private System.Windows.Forms.Label Answer;
         private System.Windows.Forms.Button ReverseButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem выставитьТекущееВремяToolStripMenuItem;
     }
 }
 
