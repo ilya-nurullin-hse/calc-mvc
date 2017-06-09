@@ -18,5 +18,10 @@ namespace CalcMVC
             Minutes = minutes;
             Seconds = seconds;
         }
+
+        public override string ToString()
+        {
+            return $"{Hours:D}:{Minutes:D2}:{Seconds:D2}";
+        }
     }
 }
