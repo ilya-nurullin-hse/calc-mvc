@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace CalcMVC
 {
     
-    //проверка гит
+   
     public partial class Form1 : Form
     {
         Time FirstTimePeriod;
@@ -64,40 +64,50 @@ namespace CalcMVC
             switch (ActionsWithTime.Text)
 
             {
-                    /* Методы класса еще не реализованы */
+                    
                 case "+":
                     {
-                        TimeCalc.Sum(FirstTimePeriod, SecondTimePeriod);
-                        MessageBox.Show("Вывод Суммы");
+                       
+                        Answer.Text= TimeCalc.Sum(FirstTimePeriod, SecondTimePeriod).ToString();
                         break;
                     }
                 case "-":
                     {
-                        TimeCalc.Sub(FirstTimePeriod, SecondTimePeriod);
-                        MessageBox.Show("Вывод Разности");
+                     
+                        Answer.Text = (TimeCalc.Sub(FirstTimePeriod, SecondTimePeriod).Hours<0)? "Невозможно вычислить":TimeCalc.Sub(FirstTimePeriod, SecondTimePeriod).ToString();
+                       // MessageBox.Show("Вывод Разности");
                         break;
                     }
                 case "<=>":
                     {
-                        TimeCalc.GetInterval(FirstTimePeriod, SecondTimePeriod);
-                        MessageBox.Show("Вывод Промежутка");
+                        Answer.Text = (TimeCalc.GetInterval(FirstTimePeriod, SecondTimePeriod).Hours<0)? "Невозможно вычислить":TimeCalc.GetInterval(FirstTimePeriod, SecondTimePeriod).ToString();
+                        
+                        //MessageBox.Show("Вывод Промежутка");
                         break;
                     }
                 case "H":
                     {
-                        TimeCalc.ToHours(FirstTimePeriod);
-                        MessageBox.Show("Вывод времени в часах");
+                        MinutesTextBox2.Text = string.Empty;
+                        SecondsTextBox2.Text = string.Empty;
+                        HoursTextBox2.Text = TimeCalc.ToHours(FirstTimePeriod).ToString();
+                         
+                       // MessageBox.Show("Вывод времени в часах");
                         break;
                     }
                 case "M":
                     {
-                        TimeCalc.ToMinutes(FirstTimePeriod);
-                        MessageBox.Show("Вывод времени в минутах");
+                        HoursTextBox2.Text = string.Empty;
+                        SecondsTextBox2.Text = string.Empty;
+                        MinutesTextBox2.Text = TimeCalc.ToMinutes(FirstTimePeriod).ToString(); 
+                      //  MessageBox.Show("Вывод времени в минутах");
                         break;
                     }
                 case "S":
-                    {    TimeCalc.ToSeconds(FirstTimePeriod);
-                        MessageBox.Show("Вывод времени в секундах");
+                    {
+                        MinutesTextBox2.Text = string.Empty;
+                       HoursTextBox2.Text = string.Empty;
+                        SecondsTextBox2.Text = TimeCalc.ToSeconds(FirstTimePeriod).ToString(); 
+                       // MessageBox.Show("Вывод времени в секундах");
                         break;
                     }
             }
@@ -115,20 +125,21 @@ namespace CalcMVC
             {
                 case "H":
                     {
-                        MessageBox.Show("Особый вывод для конвертирования в часы");
+                        SecondsTextBox2.Enabled = false;
+                        MinutesTextBox2.Enabled = false;
                         break;
                     }
                 case "M":
                     {
                         HoursTextBox2.Enabled = false;
-                        MessageBox.Show("Особый вывод для конвертирования в минуты");
+                        SecondsTextBox2.Enabled = false;
                         break;
                     }
                 case "S":
                     {
                         HoursTextBox2.Enabled = false;
                         MinutesTextBox2.Enabled = false;
-                        MessageBox.Show("Особый вывод для конвертирования в секунды");
+                      
                         break;
                     }
                
@@ -237,6 +248,11 @@ namespace CalcMVC
             HoursTextBox1.Text = DateTime.Now.Hour.ToString();
             MinutesTextBox1.Text = DateTime.Now.Minute.ToString();
             SecondsTextBox1.Text = DateTime.Now.Second.ToString();
+        }
+
+        private void ActionsWithTime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
 
     }

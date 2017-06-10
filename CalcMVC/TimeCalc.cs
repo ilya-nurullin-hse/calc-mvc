@@ -11,6 +11,7 @@ namespace CalcMVC
         public static Time Sum(Time first, Time second)           // сумма двух (1 + 2)
         {
             int time = ToSeconds(first) + ToSeconds(second);
+            
             return ToTime(time);
         }
 
@@ -30,23 +31,23 @@ namespace CalcMVC
 
         public static int ToSeconds(Time time)                   // перевод в секунды
         {
-            return time.Hours * 360 + time.Minuties * 60 + time.Seconds;
+            return time.Hours * 3600 + time.Minutes * 60 + time.Seconds;
         }
 
         public static int ToMinutes(Time time)                  // перевод в минуты - округление в меньшую сторону
         {
-            return time.Hours * 60 + time.Minuties + time.Seconds / 60;
+            return time.Hours * 60 + time.Minutes + time.Seconds / 60;
         }
 
         public static int ToHours(Time time)                   // перевод в часы - округление в меньшую сторону
         {
-            return time.Hours + time.Minuties / 60 + time.Seconds / 360;
+            return time.Hours + time.Minutes / 60 + time.Seconds / 3600;
         }
         private static Time ToTime(int seconds)               // перевод из секунд в формат Time - вспомогательная функция
         {
-            int h = time / 360;                            
-            int m = (time - h * 360) / 60;
-            int s = time - h * 360 - m * 60;
+            int h = seconds / 3600;
+            int m = (seconds - h * 3600) / 60;
+            int s = seconds - h * 3600 - m * 60;
             return new Time(h, m, s);
         }
     }

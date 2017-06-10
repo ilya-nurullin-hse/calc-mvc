@@ -166,6 +166,7 @@
             this.ActionsWithTime.Size = new System.Drawing.Size(41, 21);
             this.ActionsWithTime.TabIndex = 12;
             this.ActionsWithTime.SelectedIndexChanged += new System.EventHandler(this.ActionsWithTime_SelectedIndexChanged);
+            this.ActionsWithTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActionsWithTime_KeyPress);
             // 
             // Equal
             // 
@@ -179,14 +180,15 @@
             // 
             // Answer
             // 
-            this.Answer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Answer.AutoSize = true;
-            this.Answer.Location = new System.Drawing.Point(160, 250);
+            this.Answer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Answer.Location = new System.Drawing.Point(155, 250);
             this.Answer.Name = "Answer";
             this.Answer.Size = new System.Drawing.Size(133, 13);
             this.Answer.TabIndex = 14;
             this.Answer.Text = "Тут будет выведен ответ";
-            this.Answer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Answer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // ReverseButton
             // 
@@ -238,6 +240,8 @@
             this.Controls.Add(this.HoursTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(459, 310);
+            this.MinimumSize = new System.Drawing.Size(459, 310);
             this.Name = "Form1";
             this.Text = "TimeCalculator";
             this.menuStrip1.ResumeLayout(false);

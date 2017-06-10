@@ -21,7 +21,8 @@ namespace CalcMVC
 
         public override string ToString()
         {
-            return $"{Hours:D}:{Minutes:D2}:{Seconds:D2}";
+            return string.Format("{0:D}:{1:D2}:{2:D2}", Hours, Minutes, Seconds); // для C# < 6.0
+            /* return $"{Hours:D}:{Minutes:D2}:{Seconds:D2}";*/     // для C# >= 6.0
         }
     }
 }
