@@ -19,6 +19,12 @@ namespace CalcMVC
             _sw.Flush();
         }
 
+        public static void Log(string operation, Time first, Time second, string result)
+        {
+            _sw.WriteLine("{0} {1} {2} = {3}", first, operation, second, result);
+            _sw.Flush();
+        }
+
         public static void Log(string operation, Time time, int result)
         {
             _sw.WriteLine("{0}({1}) = {2}", operation, time, result);

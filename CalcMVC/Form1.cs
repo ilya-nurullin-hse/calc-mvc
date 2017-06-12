@@ -67,21 +67,42 @@ namespace CalcMVC
                     
                 case "+":
                     {
-                       
-                        Answer.Text= TimeCalc.Sum(FirstTimePeriod, SecondTimePeriod).ToString();
+                        Time sum = TimeCalc.Sum(FirstTimePeriod, SecondTimePeriod);
+                        Answer.Text= sum.ToString();
+                        Logger.Log("+", FirstTimePeriod, SecondTimePeriod, sum);
                         break;
                     }
                 case "-":
                     {
-                     
-                        Answer.Text = (TimeCalc.Sub(FirstTimePeriod, SecondTimePeriod).Hours<0)? "Невозможно вычислить":TimeCalc.Sub(FirstTimePeriod, SecondTimePeriod).ToString();
-                       // MessageBox.Show("Вывод Разности");
+                        Time sub = TimeCalc.Sub(FirstTimePeriod, SecondTimePeriod);
+                        if (sub.Hours < 0)
+                        {
+                            Answer.Text = @"Невозможно вычислить";
+                            Logger.Log("-", FirstTimePeriod, SecondTimePeriod, @"Невозможно вычислить");
+                        }
+                        else
+                        {
+                            Answer.Text = sub.ToString();
+                            Logger.Log("-", FirstTimePeriod, SecondTimePeriod, sub);
+                        }
+
+                        // MessageBox.Show("Вывод Разности");
                         break;
                     }
                 case "<=>":
                     {
-                        Answer.Text = (TimeCalc.GetInterval(FirstTimePeriod, SecondTimePeriod).Hours<0)? "Невозможно вычислить":TimeCalc.GetInterval(FirstTimePeriod, SecondTimePeriod).ToString();
-                        
+                        Time interval = TimeCalc.GetInterval(FirstTimePeriod, SecondTimePeriod);
+                        if (interval.Hours < 0)
+                        {
+                            Answer.Text = @"Невозможно вычислить";
+                            Logger.Log("<=>", FirstTimePeriod, SecondTimePeriod, @"Невозможно вычислить");
+                        }
+                        else
+                        {
+                            Answer.Text = interval.ToString();
+                            Logger.Log("<=>", FirstTimePeriod, SecondTimePeriod, interval);
+                        }
+
                         //MessageBox.Show("Вывод Промежутка");
                         break;
                     }
@@ -89,25 +110,33 @@ namespace CalcMVC
                     {
                         MinutesTextBox2.Text = string.Empty;
                         SecondsTextBox2.Text = string.Empty;
-                        HoursTextBox2.Text = TimeCalc.ToHours(FirstTimePeriod).ToString();
-                         
-                       // MessageBox.Show("Вывод времени в часах");
+                        int hours = TimeCalc.ToHours(FirstTimePeriod);
+                        HoursTextBox2.Text = hours.ToString();
+
+                        Logger.Log("ToHours", FirstTimePeriod, hours);
+                        // MessageBox.Show("Вывод времени в часах");
                         break;
                     }
                 case "M":
                     {
                         HoursTextBox2.Text = string.Empty;
                         SecondsTextBox2.Text = string.Empty;
-                        MinutesTextBox2.Text = TimeCalc.ToMinutes(FirstTimePeriod).ToString(); 
-                      //  MessageBox.Show("Вывод времени в минутах");
+                        int minutes = TimeCalc.ToMinutes(FirstTimePeriod);
+                        MinutesTextBox2.Text = minutes.ToString();
+
+                        Logger.Log("ToMinutes", FirstTimePeriod, minutes);
+                        //  MessageBox.Show("Вывод времени в минутах");
                         break;
                     }
                 case "S":
                     {
                         MinutesTextBox2.Text = string.Empty;
-                       HoursTextBox2.Text = string.Empty;
-                        SecondsTextBox2.Text = TimeCalc.ToSeconds(FirstTimePeriod).ToString(); 
-                       // MessageBox.Show("Вывод времени в секундах");
+                        HoursTextBox2.Text = string.Empty;
+                        int seconds = TimeCalc.ToSeconds(FirstTimePeriod);
+                        SecondsTextBox2.Text = seconds.ToString();
+
+                        Logger.Log("ToSeconds", FirstTimePeriod, seconds);
+                        // MessageBox.Show("Вывод времени в секундах");
                         break;
                     }
             }
