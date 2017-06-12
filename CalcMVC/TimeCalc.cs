@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalcMVC
 {
-    class TimeCalc
+    class TimeCalc // new comment
     {
         public static Time Sum(Time first, Time second)           // сумма двух (1 + 2)
         {
