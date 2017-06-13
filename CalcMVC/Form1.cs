@@ -18,7 +18,7 @@ namespace CalcMVC
         Time SecondTimePeriod;
         const int TextBoxesMaxLength = 7;  //макс. размер тексбокса  в символах
         public Form1()
-        {
+        { 
             InitializeComponent();
             HoursTextBox2.MaxLength = TextBoxesMaxLength;
             HoursTextBox1.MaxLength = TextBoxesMaxLength;
@@ -26,6 +26,7 @@ namespace CalcMVC
             MinutesTextBox2.MaxLength = TextBoxesMaxLength;
             SecondsTextBox1.MaxLength = TextBoxesMaxLength;
             SecondsTextBox2.MaxLength = TextBoxesMaxLength;
+            Equal.Enabled = false;
         }
         /// <summary>
         /// Подсчет значений и вывод на label
@@ -58,9 +59,9 @@ namespace CalcMVC
             }
             /*Конец обработчика форматов*/
 
-           
 
-
+            
+            Answer.Text = "Ответ выведен справа";
             switch (ActionsWithTime.Text)
 
             {
@@ -108,6 +109,7 @@ namespace CalcMVC
                     }
                 case "H":
                     {
+
                         MinutesTextBox2.Text = string.Empty;
                         SecondsTextBox2.Text = string.Empty;
                         int hours = TimeCalc.ToHours(FirstTimePeriod);
@@ -139,6 +141,14 @@ namespace CalcMVC
                         // MessageBox.Show("Вывод времени в секундах");
                         break;
                     }
+                default:
+                    {
+                        ActionsWithTime.Text = "+";
+                        Time sum = TimeCalc.Sum(FirstTimePeriod, SecondTimePeriod);
+                        Answer.Text = sum.ToString();
+                        Logger.Log("+", FirstTimePeriod, SecondTimePeriod, sum);
+                        break;
+                    }
             }
         }
 
@@ -149,6 +159,8 @@ namespace CalcMVC
         /// <param name="e"></param>
         private void ActionsWithTime_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ActionsWithTime.Text == string.Empty) Equal.Enabled = false;
+            else Equal.Enabled = true;
             MakeAllTextBoxEnabled();
             switch (ActionsWithTime.Text)
             {
